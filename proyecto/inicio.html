@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Clase</title>
+    <style>
+        body {
+            background-image: url('fondo-cuadricula-digital-abstracto-negro.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 50px;
+            background-color: #3706fc00;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgb(31, 2, 253);
+        }
+        h1 {
+            text-align: center;
+            color: #390ff5;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"],
+        select,
+        button.button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #f70a0a;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5H7z" fill="#333"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+        }
+        input[type="submit"],
+        input[type="submit2"],
+        input[type="submit3"],
+        button.button {
+            width: 45%;
+            display: inline-block;
+            background-color: #0059ff;
+            color: #ed0909bc;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover,
+        input[type="submit2"]:hover,
+        input[type="submit3"]:hover,
+        button.button:hover {
+            background-color: #45a049;
+        }
+        .day-container {
+            margin-top: 30px;
+            border-top: 2px solid #2b03f4;
+            padding-top: 20px;
+        }
+        .day-container h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .day-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><b>INGRESA LOS VALORES DE TU CLASE</b></h1>
+        <form action="inicio.php" method="post" id="courseForm">
+            <label for="classroomCode">Código de Curso</label>
+            <input type="text" id="courseCode" name="courseCode" pattern="\d{4}" title="Por favor ingresa exactamente 4 dígitos numéricos." required>
+            <label for="courseName">Nombre del Curso:</label>
+            <input type="text" id="courseName" name="courseName" minlength="6" maxlength="25" pattern="^[^@\/,.]+$" title="Por favor evita usar los siguientes caracteres: @, /, , o .">
+            <label for="numStudents">Número de Estudiantes:</label>
+            <input type="number" id="numStudents" name="numStudents" min="15" max="30" required>   
+            <input type="submit" name="submit1" value="Enviar">
+            <input type="submit"  name="submit2" value="Volver">
+            <button class="button" onclick="irAInicio()">Ver Clases</button>
+            <button class="button" onclick="Siguiente()">Siguiente</button>
+        </form>
+    </div>
+
+    <script>
+        function irAInicio() {
+            window.location.href = "mostrarclase.html";
+        }
+        function Siguiente() {
+            window.location.href = "salones.html";
+        }
+    </script>
+</body>
+</html>

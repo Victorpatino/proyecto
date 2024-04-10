@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario</title>
+    <style>
+         body {
+            background-image: url('fondo-cuadricula-digital-abstracto-negro.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #fc0909;
+            margin: 0; 
+            padding: 0; 
+            min-height: 100vh;
+           
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #0e0202;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #1d06ee;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Horario</h2>
+    <table id="userData">
+        <tr>
+            <th>Numero de registro</th>
+            <th>Codigo Curso</th>
+            <th>Codigo Salon</th>
+            <th>Dia</th>
+            <th>Hora</th>
+            
+            <!-- Agrega más columnas según tus necesidades -->
+        </tr>
+        <!-- Los datos se cargarán aquí mediante JavaScript -->
+    </table>
+</div>
+
+<script>
+    // Obtener los datos mediante AJAX
+    fetch('mostrarhora.php')
+        .then(response => response.json())
+        .then(data => {
+            
+            const tableBody = document.getElementById('userData');
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.numregistro}</td>
+                    <td>${row.codigocurso}</td>
+                    <td>${row.codigosalon}</td>
+                    <td>${row.dia}</td>
+                    <td>${row.hora}</td>
+                    
+
+                    
+                `;
+                tableBody.appendChild(tr);
+            });
+        })
+        .catch(error => console.error('Error al obtener los datos:', error));
+</script>
+</body>
+</html>

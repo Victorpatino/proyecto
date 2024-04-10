@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salones Disponibles</title>
+    <style>
+         body {
+            background-image: url('fondo-cuadricula-digital-abstracto-negro.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #fc0909;
+            margin: 0; 
+            padding: 0; 
+            min-height: 100vh;
+           
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #0b139c;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4b17e883;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+<div class="container">
+    <h2>Salones Disponibles</h2>
+    <table id="userData">
+        <tr>
+            <th>Codigosalon</th>
+            <th>Nombre del salon</th>
+            <th>Capacidad</th>
+            
+            <!-- Agrega más columnas según tus necesidades -->
+        </tr>
+        <!-- Los datos se cargarán aquí mediante JavaScript -->
+    </table>
+</div>
+
+<script>
+    // Obtener los datos mediante AJAX
+    fetch('salonesdis.php')
+        .then(response => response.json())
+        .then(data => {
+            
+            const tableBody = document.getElementById('userData');
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.codigosalon}</td>
+                    <td>${row.nombresalon}</td>
+                    <td>${row.capacidad}</td>
+
+                    
+                `;
+                tableBody.appendChild(tr);
+            });
+        })
+        .catch(error => console.error('Error al obtener los datos:', error));
+</script>
+</body>
+</html>

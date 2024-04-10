@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Clase</title>
+    <style>
+        body {
+            background-image: url('fondo-cuadricula-digital-abstracto-negro.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f400;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 50px;
+            background-color: #2506ef00;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(238, 2, 2, 0.69);
+            text-align: center;
+        }
+        h1 {
+            color: #3706e9;
+            margin-bottom: 30px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #fa0404;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+        input[type="submit"],
+        button {
+            background-color: #007bff;
+            color: #f8f3f3;
+            border: none;
+            cursor: pointer;
+            max-width: 200px; 
+            margin-left: auto; 
+            margin-right: auto; 
+        }
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #08f233;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><b>INGRESA LOS VALORES DEL SALÓN</b></h1>
+        <form action="salones.php" method="post" id="courseForm">
+            <label for="courseCode">Código de Salón:</label>
+            <input type="text" id="courseCode" name="courseCode" pattern="\d{3}" title="Por favor ingresa exactamente 3 dígitos numéricos." required>
+
+            <label for="courseName">Nombre del Salón:</label>
+            <input type="text" id="courseName" name="courseName" minlength="6" maxlength="25" pattern="^[^@\/,.]+$" title="Por favor evita usar los siguientes caracteres: @, /, , o .">
+            
+            <label for="numStudents">Capacidad:</label>
+            <input type="number" id="numStudents" name="numStudents" min="15" max="30" required>  
+            
+            <input type="submit" name="submit1" value="Enviar">
+        </form>
+        <button onclick="versalones()">Ver Salones</button>
+        <button onclick="irAInicio()">Salir</button>
+        <button onclick="Siguiente()">Siguiente</button>
+    </div>
+
+    <script>
+        function versalones() {
+            window.location.href = "felicidades.html";
+        }
+        function irAInicio() {
+            window.location.href = "logininter.html";
+        }
+        function Siguiente() {
+            window.location.href = "registro.html";
+        }
+        
+    </script>
+</body>
+</html>

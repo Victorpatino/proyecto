@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassHub - Gestión de Salones de Clase</title>
+    <style>
+        body {
+            
+            background-image: url('fondo-cuadricula-digital-abstracto-negro.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+        
+            
+            font-family: Arial, sans-serif;
+            background-color: #fc0909;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;    
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #aabaf500;
+            padding: 100px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(244, 221, 10);
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #044df8;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #4c00ff;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #84e898;
+        }
+        .button-volver {
+            background-color: button class="ulpgcds-btn ulpgcds-btn--primary"span class="ulpgcds-btn__icon--left ulpgcds-icon-ulpgc";
+            margin-right: 10px;
+        }
+        .button-registrar {
+            background-color:color-mix(in srgb, color percentage, color percentage) class="ulpgcds-btn ulpgcds-btn--primary" class="ulpgcds-icon--right ulpgcds-icon-arrow-right"/span/button
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Bienvenido a ClassHub!</h1>
+        <p>¡Tu aplicación preferida para gestionar tus salones de clase!</p>
+        <ul>
+            <li>Gestionará los salones de clase de manera eficiente.</li>
+            <li>Facilitará la organización de cursos y horarios.</li>
+            <li>Permitirá a los usuarios registrar nuevos cursos.</li>
+        </ul>
+        <button class="button button-volver" onclick="volver()" style="background-color: #007bff; /* Azul */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 0.4s;">Volver</button>
+
+<button class="button button-registrar" onclick="irAInicio()" style="background-color: #007bff; /* Verde */
+border: none;
+color: white;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+border-radius: 5px;
+cursor: pointer;
+transition-duration: 0.4s;">Registrar Curso</button>
+
+    </div>
+
+    <script>
+        function volver() {
+            window.location.href = "logininter.html";
+        }
+
+        function irAInicio() {
+            window.location.href = "inicio.html";
+        }
+    </script>
+</body>
+</html>
